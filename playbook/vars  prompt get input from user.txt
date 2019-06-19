@@ -1,0 +1,25 @@
+---
+- hosts: easy
+  user: ansible
+  sudo: yes
+  vars_prompt:
+    - name: some_userfirstlastname
+      private: no
+      prompt: " enter the users first and last name"
+    - name: some_username
+      private: no
+      prompt: "enter the username of the user"
+    - name: some_password
+      private: yes
+      prompt: " enter the password of the user"
+      encrypt: "sha512_crypt"
+      confirm: yes
+      salt_size: 7
+  tasks:
+    - name: adding the user "{{ some_userfirstlastname }}"
+      user:
+        name: "{{ some_username }}"
+        comment: "{{ some_userfirstlastname }}"
+        shell: /bin/bash
+        password: "{{ some_password }}"
+

@@ -1,0 +1,10 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: send a message to chat in playbook
+    telegram:
+      token: '818349277:AAFfDuKmv1aTKWDJCw9e_PDoxqymkpkzvws'
+      chat_id: -382412534
+      msg: bye da
