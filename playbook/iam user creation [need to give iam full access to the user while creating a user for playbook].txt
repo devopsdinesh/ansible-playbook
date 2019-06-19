@@ -1,0 +1,13 @@
+---
+- hosts: easy
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to create iam user
+    iam_user:
+      name: tt
+      managed_policy:
+      - arn:aws:iam::aws:policy/AmazonSNSFullAccess
+      state: present
+      aws_access_key: AKIA3CNGN3ZHNNJ2IZ6T
+      aws_secret_key: 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
