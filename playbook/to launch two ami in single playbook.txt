@@ -1,0 +1,14 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to create ami
+    ec2_ami:
+      aws_access_key: 
+      aws_secret_key: 
+      instance_id: i-0b7bd10760d2e3ac6
+      wait: yes
+      name: newtest
+      region: us-east-2
+- include: bmi.yml

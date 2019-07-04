@@ -1,0 +1,12 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to create a cluster in ecs
+    ecs_cluster:
+      aws_access_key: 
+      aws_secret_key: 
+      region: us-east-2
+      name: test
+      state: present

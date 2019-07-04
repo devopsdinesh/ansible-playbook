@@ -1,0 +1,15 @@
+---
+- hosts: easy
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: stop ec2 instance
+    ec2:
+      instance_ids: i-095b1302d216c8153,i-0f6cc68d2fd1df4a4
+      region: us-east-2
+      state: stopped
+      wait: True
+      vpc_subnet_id: subnet-04a36948
+      assign_public_ip: yes
+      aws_access_key: 
+      aws_secret_key: 

@@ -1,0 +1,17 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: Create a new unattached vgw
+    ec2_vpc_vgw:
+      aws_access_key: 
+      aws_secret_key: 
+      state: present
+      region: us-east-2
+      name: personal-testing
+      type: ipsec.1
+      tags:
+        environment: production
+        owner: ABC
+    register: created_vgw

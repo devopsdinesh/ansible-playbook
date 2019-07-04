@@ -1,0 +1,15 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to manage an vpc internet gateway
+    ec2_vpc_egress_igw:
+      aws_access_key: 
+      aws_secret_key: 
+      vpc_id: 
+      region: us-east-2
+      state: absent
+    register: eig
+
+

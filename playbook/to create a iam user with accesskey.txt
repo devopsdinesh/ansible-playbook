@@ -1,0 +1,17 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: Create two new IAM users with API keys
+    iam:
+      aws_access_key: 
+      aws_secret_key: 
+      iam_type: user
+      name: "{{ item }}"
+      state: present
+      password: ok
+      access_key_state: create
+    loop:
+      - jcleese
+      - mpython

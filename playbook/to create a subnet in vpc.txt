@@ -1,0 +1,16 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: Create subnet for database servers
+    ec2_vpc_subnet:
+      aws_access_key: 
+      aws_secret_key: 
+      region: us-east-2
+      state: present
+      vpc_id: vpc-0a37a266ce117b22c
+      cidr: 17.1.3.0/24
+      resource_tags:
+        Name: Database Subnet
+    register: database_subnet

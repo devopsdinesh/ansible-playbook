@@ -1,0 +1,14 @@
+
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to create strategy for placement group
+    ec2_placement_group:
+      aws_access_key: 
+      aws_secret_key: 
+      name: spre
+      state: present
+      strategy: spread
+      region: us-east-2

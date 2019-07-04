@@ -1,0 +1,13 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to create volume from snapshot
+    ec2_vol:
+      aws_access_key: 
+      aws_secret_key: 
+      instance:
+      snapshot: 
+      region: us-east-2
+

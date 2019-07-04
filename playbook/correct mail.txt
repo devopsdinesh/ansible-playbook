@@ -1,0 +1,27 @@
+---
+- hosts: easy
+  sudo: yes
+  vars_prompt:
+    - name: some_username
+      private: no
+      prompt: "enter the email id of the user"
+    - name: some_password
+      private: yes
+      prompt: "enter the password of the user"
+      encrypt: "sha512_crypt"
+      confirm: yes
+      salt_size: 7
+  vars:
+    name: "{{ some_username }}"
+    password: "{{ some_password }}"
+  tasks:
+   - name: mail sending using mail module
+     mail:
+       host: "smtp.gmail.com"
+       port: 587
+       username: ""
+       password: ""
+       to:
+       - "mikee larson <007larson@gmail.com>"
+       subject: ansible
+       body: "hello  this is"

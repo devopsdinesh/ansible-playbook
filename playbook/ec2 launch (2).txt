@@ -1,0 +1,23 @@
+- hosts: easy
+  sudo: yes
+  connection: ssh
+  gather_facts: yes
+  vars:
+    keypair: ty
+    instance_type: t2.micro
+    security_group: sg-3f051c53
+    image: ami-0f65671a86f061fcd
+    region: us-east-2
+  tasks:
+    - name: Launch instance
+      ec2:
+         key_name: ty
+         instance_type: t2.micro
+         image: ami-0f65671a86f061fcd
+         wait: yes
+         count: 2
+         region: us-east-2
+         aws_access_key: 
+         aws_secret_key: 
+         vpc_subnet_id: subnet-04a36948
+         assign_public_ip: yes

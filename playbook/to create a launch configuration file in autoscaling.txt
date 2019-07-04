@@ -1,0 +1,16 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to create launch config
+    ec2_lc:
+      aws_access_key: 
+      aws_secret_key: 
+      name: 
+      image_id: 
+      key_name: ty
+      region: us-east-2
+      security_groups: 
+      instance_type: t2.micro
+      assign_public_ip: no

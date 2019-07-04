@@ -1,0 +1,13 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to redirect request
+    s3_website:
+      aws_access_key: 
+      aws_secret_key: 
+      region: us-east-2
+      name: mikk.com
+      redirect_all_requests: mikkk
+      state: present

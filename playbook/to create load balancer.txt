@@ -1,0 +1,29 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to crerate elb
+    elb_classic_lb:
+      aws_access_key: 
+      aws_secret_key: 
+      region: us-east-2
+      name: ellllb
+      scheme: internal
+      state: present
+      subnets:
+        - subnet-f2a2c188
+        - subnet-04a36948
+      security_group_names: load
+      listeners:
+        - protocol: http
+          load_balancer_port: 80
+          instance_port: 80
+      health_check:
+          ping_protocol: http
+          ping_port: 80
+          ping_path: /
+          response_timeout: 10 # seconds
+          interval: 60 # seconds
+          unhealthy_threshold: 2
+          healthy_threshold: 2

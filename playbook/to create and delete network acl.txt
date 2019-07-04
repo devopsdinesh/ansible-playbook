@@ -1,0 +1,18 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to create and delete network acl
+    ec2_vpc_nacl:
+      aws_access_key: 
+      aws_secret_key: 
+      vpc_id: vpc-010348cc6054ffa75
+      name: prod-dmz-nacl
+      region: us-east-2
+      subnets: ['dempub', 'dempriva']
+      tags:
+        CostCode: CC1234
+        Project: phoenix
+        Description: production DMZ
+      state: 'absent'

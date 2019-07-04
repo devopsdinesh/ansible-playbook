@@ -1,0 +1,12 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to to remove s3 bucket
+    s3_website:
+      aws_access_key: 
+      aws_secret_key: 
+      region: us-east-2
+      name: mikk.com
+      state: absent

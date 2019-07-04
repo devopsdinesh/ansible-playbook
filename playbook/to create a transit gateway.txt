@@ -1,0 +1,13 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to create a transit gateway
+    ec2_transit_gateway:
+      aws_access_key: 
+      aws_secret_key: 
+      state: present
+      region: us-east-2
+      description: personal-testing
+    register: created_tgw

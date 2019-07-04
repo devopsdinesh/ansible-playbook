@@ -1,0 +1,20 @@
+---
+ - hosts: ty
+   user: ansible
+   sudo: yes
+   tasks:
+   - name: to create health check
+     route53_health_check:
+       aws_access_key: 
+       aws_secret_key: 
+       region: us-east-2
+       state: present
+       fqdn: virat.com
+       type: HTTP_STR_MATCH
+       resource_path: /
+       string_match: "Hello"
+       request_interval: 10
+       failure_threshold: 2
+     register: my_health_check
+
+      

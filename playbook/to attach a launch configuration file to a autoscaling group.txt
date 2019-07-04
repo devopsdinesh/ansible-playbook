@@ -1,0 +1,17 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - ec2_asg:
+      aws_access_key: 
+      aws_secret_key: 
+      name: asg
+      launch_config_name:my_new_lc 
+      health_check_period: 
+      health_check_type: 
+      replace_all_instances: yes
+      min_size: 5
+      max_size: 5
+      desired_capacity: 5
+      region: us-east-2

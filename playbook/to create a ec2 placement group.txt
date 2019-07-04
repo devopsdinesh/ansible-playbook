@@ -1,0 +1,12 @@
+---
+- hosts: easy
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to create placement group
+    ec2_placement_group:
+      aws_access_key: 
+      aws_secret_key: 
+      name: my-cluster
+      state: present
+      region: us-east-2

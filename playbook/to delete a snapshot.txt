@@ -1,0 +1,13 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to delete snapshot
+    local_action:
+      aws_access_key: 
+      aws_secret_key: 
+      module: ec2_snapshot
+      snapshot_id: 
+      state: absent
+      region: us-east-2

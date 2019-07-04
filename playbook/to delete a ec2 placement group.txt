@@ -1,0 +1,13 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to delete placement group
+    ec2_placement_group:
+      aws_access_key: 
+      aws_secret_key: 
+      name: spre
+      state: absent
+      strategy: spread
+      region: us-east-2

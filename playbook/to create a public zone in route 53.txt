@@ -1,0 +1,13 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: create a public zone
+    route53_zone:
+      aws_access_key: 
+      aws_secret_key: 
+      region: us-east-2
+      zone: virat.com
+      comment: this is an example
+      state: present

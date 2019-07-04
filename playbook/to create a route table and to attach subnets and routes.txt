@@ -1,0 +1,18 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: Set up public subnet route table
+    ec2_vpc_route_table:
+      aws_access_key: 
+      aws_secret_key: 
+      vpc_id: vpc-0a37a266ce117b22c
+      region: us-east-2
+      tags:
+        Name: Publicsssss
+      subnets:
+        - kolpub
+      routes:
+        - dest: 0.0.0.0/0
+          gateway_id: igw-09b328b451aa30c8e

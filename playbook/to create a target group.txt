@@ -1,0 +1,15 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - elb_target_group:
+      aws_access_key: 
+      aws_secret_key: 
+      region: us-east-2
+      name: mytargetgroup
+      protocol: http
+      port: 80
+      vpc_id: vpc-d17974b9
+      state: present
+      target_type: instance

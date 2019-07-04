@@ -1,0 +1,17 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to create ami
+    ec2_ami:
+      aws_access_key: 
+      aws_secret_key: 
+      instance_id: 
+      wait: yes
+      name: newtest
+      region: us-east-2
+      image_id: 
+      delete_snapshot: True
+      state: absent
+

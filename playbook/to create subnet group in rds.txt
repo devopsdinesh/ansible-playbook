@@ -1,0 +1,16 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to create subnet
+    rds_subnet_group:
+      aws_access_key: 
+      aws_secret_key: 
+      state: present
+      name: norwegian-blue
+      region: us-east-2
+      description: My Fancy Ex Parrot Subnet Group
+      subnets:
+        - subnet-03863637f70dc764e
+        - subnet-07b8a14b310c93d7d

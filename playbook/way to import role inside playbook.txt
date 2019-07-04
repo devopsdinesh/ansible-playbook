@@ -1,0 +1,11 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to install git
+    apt:
+       name: git
+       state: latest
+  - import_role:
+      name: gitty

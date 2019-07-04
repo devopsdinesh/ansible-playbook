@@ -1,0 +1,14 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to register instance to target group
+    elb_target:
+      aws_access_key: 
+      aws_secret_key: 
+      region: us-east-2
+      target_group_name: mytargetgroup
+      target_id: i-0b7bd10760d2e3ac6 (instance id if targeting instance)
+      state: absent
+      deregister_unused: yes

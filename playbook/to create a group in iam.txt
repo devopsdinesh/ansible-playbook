@@ -1,0 +1,16 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: Create Two Groups, Mario and Luigi
+    iam:
+      aws_access_key: 
+      aws_secret_key: 
+      iam_type: group
+      name: "{{ item }}"
+      state: present
+    loop:
+       - Mario
+       - Luigi
+    register: new_groups

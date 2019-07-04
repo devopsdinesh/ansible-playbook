@@ -1,0 +1,16 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to create lifecycle hooks
+    ec2_asg_lifecycle_hook:
+      aws_access_key: 
+      aws_secret_key: 
+      region: us-east-2
+      state: present
+      autoscaling_group_name: myasg
+      lifecycle_hook_name: myasg
+      transition: autoscaling:EC2_INSTANCE_LAUNCHING
+      heartbeat_timeout: 7000
+      default_result: ABANDON

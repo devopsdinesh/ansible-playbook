@@ -1,0 +1,15 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to create and remove tag on ec2 resources
+    ec2_tag:
+      aws_access_key: 
+      aws_secret_key: 
+      region: 
+      resource: 
+      state: absent
+      tags:
+        Name: ubervol
+        env: prod

@@ -1,0 +1,11 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to create bucket in s3
+    s3_bucket:
+      aws_access_key: 
+      aws_secret_key: 
+      region: us-east-2
+      name: mikkk

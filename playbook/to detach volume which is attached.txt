@@ -1,0 +1,12 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to attach volume to existing volume
+    ec2_vol:
+      aws_access_key: 
+      aws_secret_key: 
+      id: 
+      instance: None
+      region: us-east-2

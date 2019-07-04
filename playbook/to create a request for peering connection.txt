@@ -1,0 +1,19 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: Create intra-region VPC peering Connection
+    ec2_vpc_peer:
+      aws_access_key: 
+      aws_secret_key: 
+      region: us-east-2 (req region)
+      vpc_id: vpc-0a37a266ce117b22c (requestor vpc id)
+      peer_region: us-east-1(accp reg)
+      peer_vpc_id: vpc-0dfa2cadc7e383964(accp id)
+      state: present
+      tags:
+        Name: Peering connection for us-east-2 VPC to us-east-1 VPC
+        CostCode: CC1234
+        Project: phoenix
+    register: vpc_peer

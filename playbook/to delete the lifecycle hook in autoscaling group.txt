@@ -1,0 +1,14 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to delete lifecycle hook
+    ec2_asg_lifecycle_hook:
+      aws_access_key: 
+      aws_secret_key: 
+      region: us-east-2
+      state: absent
+      autoscaling_group_name: myasg
+      lifecycle_hook_name: myasg
+~

@@ -1,0 +1,14 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to copy ami between regions
+    ec2_snapshot_copy:
+      aws_access_key: 
+      aws_secret_key: 
+      source_region: us-east-2
+      region: us-east-1
+      source_snapshot_id:
+
+

@@ -1,0 +1,13 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name:
+    iam:
+      aws_access_key: 
+      aws_secret_key: 
+      iam_type: user
+      name: mpython
+      state: update
+      groups: luigi

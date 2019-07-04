@@ -1,0 +1,19 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name:
+    rds_param_group:
+        aws_access_key: 
+        aws_secret_key: 
+        region: us-east-2
+        state: present
+        name: norwegian-blue
+        description: 'My Fancy Ex Parrot Group'
+        engine: 'mysql5.6'
+        params:
+            auto_increment_increment: "42K"
+        tags:
+            Environment: production
+            Application: parrot

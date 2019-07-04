@@ -1,0 +1,12 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to create snapshot from an existing volume
+    ec2_snapshot:
+      aws_access_key: 
+      aws_secret_key: 
+      volume_id: 
+      description: snapshot
+      region: 

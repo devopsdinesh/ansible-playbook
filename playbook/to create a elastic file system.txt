@@ -1,0 +1,15 @@
+---
+- hosts: ty
+  user: ansible
+  sudo: yes
+  tasks:
+  - name: to create efs
+    efs:
+      aws_access_key: 
+      aws_secret_key: 
+      region: us-east-2
+      state: present
+      name: myTestEFS
+      targets:
+          - subnet_id: 
+            security_groups: [ "" ]
